@@ -93,6 +93,6 @@ class Host(SessionHost):
         if self.save: self.save(session_data)
 
         if self.file:
-            with open(self.file, "w") as writing: writing.write(session_data)
+            with open(self.file, "w") as writing: json.dump(session_data, writing, indent=4)
 
         self.load_session(session_data)
